@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="400px" height="400px" style="border: 1px black solid">
+
+    </canvas>
+
+    <img src="https://www.w3schools.com/graphics/pic_the_scream.jpg" alt="" id="scream" width="100" height="100">
+
+    <script type="text/javascript">
+    
+        var c = document.getElementById("mycanvas"); //lấy id của canvas
+        var ctx = c.getContext("2d");// khai báo nội dung vẽ là vẽ 2d
+        ctx.moveTo(0,0);//di chuyển cái context đến vị trí (0,0)
+        ctx.lineTo(200,100);// từ vị trí (0,0) vẽ đến vị trị (200,100)
+        ctx.lineTo(50,50);// từ vị trí (200,100) vẽ tới vị trí (50,50)
+        ctx.strokeStyle="red"; // thay đổi màu nét vẽ
+        ctx.stroke();// vẽ
+
+        ctx.beginPath(); // vẽ một hình mới
+        ctx.arc(300,300,50,0,Math.PI, false); // vẽ 1 vòng tròn (300,300,50,0,2*Math.PI(360)) tương ứng (tọa độ x,tọa độ y,R,0: vễ từ góc 0, 360: vẽ đến góc 360 (1 vòng tròn))
+        ctx.fillStyle = "blue"; // mau can do
+        ctx.stroke(); //vẽ
+        ctx.fill(); //do mau vao hinh
+
+        ctx.beginPath();
+        ctx.font="30px tahoma"; // khai báo kiểu font và độ rộng của text
+        ctx.fillText("hello",150,150);// vẽ chuỗi hello từ vị trí (150,150)
+
+        ctx.beginPath();
+        ctx.font="30px tahoma";
+        ctx.strokeText('hello', 150,180); //vẽ chữ không có màu trong chữ
+
+        ctx.beginPath();
+        var grd = ctx.createLinearGradient(0, 0, 0, 400);        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"blue");
+        ctx.fillStyle = grd;
+        ctx.rect(50,50,150,150);
+        ctx.fill();
+
+        window.onload = function() {
+            ctx.beginPath();
+            var img = document.getElementById('scream');
+            ctx.drawImage(img, 0,0);
+            ctx.beginPath();
+            ctx.drawImage(img, 105,105, 50, 50);
+        }
+
+    </script>
+
+</body>
+</html>

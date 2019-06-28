@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--action duong dan cua sever
+        method co 2 phuong thuc la GET(default) va POST
+        GET(truyen het tren url): chi truyen duoc nhung thong tin co ban(khong the upload file len server duoc)
+        POST(truyen ngam): co the truyen ca image,file,khong gioi han dung luong etc...
+        enctype: Submit 1 file ta phai dinh nghia enctype la multipat/form-data
+    -->
+    <form action="action.php" method="POST" enctype="multipart/form-data">
+        Name:<br>
+        <input type="text" name="name" placeholder="enter your name" required>
+        <br>
+        Full Name:<br>
+        <input type="text" name="full_name" value="John Henry" disabled="disabled">
+        <br>
+        <select>
+            <option value="1">honda</option>
+            <option value="1">yamaha</option>
+            <option value="1">dream</option>
+        </select>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button type="button">Click me</button>
+        <input type="password">
+        <input type="reset" value="Reset">
+        <input type="radio" name="radio">This is radio a
+        <input type="radio" name="radio">This is radio b
+        <input type="radio" name="radio">This is radio c
+        <input type="checkbox" name="checkbox"> this is checkbox a
+        <input type="checkbox" name="checkbox"> this is checkbox b
+        <input type="checkbox" name="checkbox"> this is checkbox c
+        <input type="button" value="Button">
+        <input type="color">
+        <input type="date">
+        <input type="submit" value="Submit">
+    </form>
+    <!--Input attribute
+        value: dinh nghia 1 gia tri trong form.
+        disabled="disabled", readonly="readonly" : nguoi dung se khong the thay doi gia tri
+        size="30": do dai cua thanh input
+        maxlength="10": do dai ky tu cho phep nguoi dung nhap toi da
+        required: bat buoc nguoi dung phai nhap vao input co dat thuoc tinh la required neu khong se hien thong bao
+        placeholder="enter your name": hien 1 gi chu mo tren thanh input de nguoi dung de su dung
+    -->
+</body>
+</html>
